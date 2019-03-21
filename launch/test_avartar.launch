@@ -1,0 +1,11 @@
+<launch>
+    <node pkg="imu_error_comp" type="imu_error_comp_node" name="imu_error_comp" output="screen">
+        <rosparam file="$(find imu_error_comp)/param/avartar1_cof.yaml"/>
+        <param name="use_gyro_intrinsic_params"  value="true"/>
+        <param name="use_acc_intrinsic_params"   value="true"/>
+        <param name="pub_acc_norm"   value="false"/>
+        <param name="debug"  value="false"/>
+        <param name="imu_subscribe_topic"  value="/mynteye/imu/data_raw"/>
+        <param name="imu_publish_topic"  value="/mynteye/imu/data_raw_processed"/>
+    </node>
+</launch>
